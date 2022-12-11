@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="group"
+            type="com.mk.contacts.model.room.Group" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/root_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"
+        android:tag="unchecked"
+        app:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/group_name_tv"
+            style="@style/valueText"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{group.groupName}"
+            tools:text="Family" />
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.mk.contacts.view.fragments.AddContactFragment"
+        android:label="AddContactFragment" >
+        <argument
+            android:name="isPersonalDetail"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="editMode"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="contactId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+    <fragment
+        android:id="@+id/showContactsFragment"
+        android:name="com.mk.contacts.view.fragments.ShowContactsFragment"
+        android:label="ShowContactsFragment" >
+        <action
+            android:id="@+id/action_showContactsFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_showContactsFragment_to_showContactFragment"
+            app:destination="@id/showContactFragment" />
+        <argument
+            android:name="filterType"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="groups"
+            app:argType="string"
+            android:defaultValue=" " />
+    </fragment>
+    <fragment
+        android:id="@+id/showContactFragment"
+        android:name="com.mk.contacts.view.fragments.ShowContactFragment"
+        android:label="ShowContactFragment" >
+        <argument
+            android:name="contactId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_showContactFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mk.contacts.view.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_showContactsFragment"
+            app:destination="@id/showContactsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_showContactFragment"
+            app:destination="@id/showContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchContactsFragment"
+        android:name="com.mk.contacts.view.fragments.SearchContactsFragment"
+        android:label="fragment_search_contacts"
+        tools:layout="@layout/fragment_search_contacts" >
+        <action
+            android:id="@+id/action_searchContactsFragment2_to_showContactFragment"
+            app:destination="@id/showContactFragment" />
+    </fragment>
+</navigation>

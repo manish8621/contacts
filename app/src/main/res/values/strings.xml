@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">contacts</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phone_number">Phone number</string>
+    <string name="groups">Groups</string>
+    <string name="favourites">Favourites</string>
+    <string name="personal_detail">Personal detail</string>
+    <string name="add_personal_details">add personal details btn</string>
+    <string name="add_contact">add contact</string>
+</resources>
